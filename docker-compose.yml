@@ -10,7 +10,7 @@ services:
     networks:
     - postgres_conn
     ports:
-     - "5432"
+     - "55432:5432"
     env_file: .env
   import-natural-earth:
     image: "openmaptiles/import-natural-earth:1.4"

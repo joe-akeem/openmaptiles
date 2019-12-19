@@ -149,6 +149,18 @@ mtb_scale_field: &mtb_scale
   key: mtb:scale
   name: mtb_scale
   type: string
+mtb_scale_uphill_field: &mtb_scale_uphill
+  key: mtb:scale:uphill
+  name: mtb_scale_uphill
+  type: string
+mtb_type_field: &mtb_type
+  key: mtb:type
+  name: mtb_type
+  type: string
+mtb_name_field: &mtb_name
+  key: mtb:name
+  name: mtb_name
+  type: string
 surface_field: &surface
   key: surface
   name: surface
@@ -195,6 +207,9 @@ tables:
     - *foot
     - *horse
     - *mtb_scale
+    - *mtb_scale_uphill
+    - *mtb_type
+    - *mtb_name
     - *surface
     mapping:
       highway:
