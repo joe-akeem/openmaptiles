@@ -123,7 +123,7 @@ cd data
 wget http://download.geofabrik.de/europe/albania-latest.osm.pbf
 ```
 
-[Import OpenStreetMap data](https://github.com/openmaptiles/import-osm) with the mapping rules from
+[Import OpenStreetMap data](https://github.com/openmaptiles/openmaptiles-tools/tree/master/docker/import-osm) with the mapping rules from
 `build/mapping.yaml` (which has been created by `make`).
 
 ```bash
@@ -135,7 +135,9 @@ docker-compose run import-osm
 Each time you modify layer SQL code run `make` and `make import-sql`.
 
 ```
-make clean && make && make import-sql
+make clean
+make
+make import-sql
 ```
 
 Now you are ready to **generate the vector tiles**. Using environment variables
