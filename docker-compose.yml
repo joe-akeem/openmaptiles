@@ -1,7 +1,6 @@
 version: "2"
 volumes:
   pgdata:
-  cache:
 services:
   postgres:
     image: "openmaptiles/postgis:${TOOLS_VERSION}"
@@ -37,7 +36,7 @@ services:
     volumes:
       - ./data:/import
       - ./build:/mapping
-      - cache:/cache
+      - ./cache:/cache
   import-osmborder:
     image: "openmaptiles/import-osmborder:${TOOLS_VERSION}"
     env_file: .env
@@ -54,7 +53,7 @@ services:
     volumes:
       - ./data:/import
       - ./build:/mapping
-      - cache:/cache
+      - ./cache:/cache
   update-osm:
     image: "openmaptiles/import-osm:${TOOLS_VERSION}"
     env_file: .env
@@ -66,7 +65,7 @@ services:
     volumes:
       - ./data:/import
       - ./build:/mapping
-      - cache:/cache
+      - ./cache:/cache
   import-sql:
     # This target is obsolete, and was left for backwards compatibility
     # Use openmaptiles-tools target instead
